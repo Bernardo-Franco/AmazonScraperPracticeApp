@@ -1,10 +1,11 @@
 const express = require('express');
 const request = require('request-promise');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const scraperApiKey = "32e3eea793eeb0244ee94c55d3a146e8"
+const scraperApiKey = process.env.API_KEY
 const baseURL = `http://api.scraperapi.com?api_key=${scraperApiKey}&autoparse=true`;
 
 app.use(express.json());
